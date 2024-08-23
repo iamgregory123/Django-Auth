@@ -1,0 +1,16 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="ror-centred">
+    <div class="col">
+        <h2 class="row1">Register</h2>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="bt-dark">Submit</button>
+            <a href="{% url 'login' %}" class="btn">Login</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
